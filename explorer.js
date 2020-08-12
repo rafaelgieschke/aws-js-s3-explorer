@@ -165,7 +165,7 @@ function SharedService($rootScope) {
 
         // AWS.config.update(settings.cred);
         // AWS.config.update({ region: settings.region });
-        AWS.config.update(Object.assign(settings.cred, { region: settings.region }));
+        AWS.config.update(Object.assign(settings.cred, { ...settings }));
 
         if (this.skew) {
             this.correctClockSkew(settings.bucket);
@@ -923,7 +923,7 @@ function SettingsController($scope, SharedService) {
     // Initialized for an unauthenticated user exploring the current bucket
     // TODO: calculate current bucket and initialize below
     $scope.settings = {
-        auth: 'anon', region: '', bucket: '', entered_bucket: '', selected_bucket: '', view: 'folder', delimiter: '/', prefix: '',
+        auth: 'anon', region: '', bucket: '', entered_bucket: '', selected_bucket: '', view: 'folder', delimiter: '/', prefix: '', s3BucketEndpoint: true,
     };
     $scope.settings.mfa = { use: 'no', code: '' };
     $scope.settings.cred = { accessKeyId: '', secretAccessKey: '', sessionToken: '' };
