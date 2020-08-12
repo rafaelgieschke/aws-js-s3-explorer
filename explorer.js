@@ -923,7 +923,7 @@ function SettingsController($scope, SharedService) {
     // Initialized for an unauthenticated user exploring the current bucket
     // TODO: calculate current bucket and initialize below
     $scope.settings = {
-        auth: 'anon', region: '', bucket: '', entered_bucket: '', selected_bucket: '', view: 'folder', delimiter: '/', prefix: '', s3BucketEndpoint: true,
+        auth: 'anon', region: '', bucket: '', entered_bucket: '', selected_bucket: '', view: 'folder', delimiter: '/', prefix: '', s3ForcePathStyle: true,
     };
     $scope.settings.mfa = { use: 'no', code: '' };
     $scope.settings.cred = { accessKeyId: '', secretAccessKey: '', sessionToken: '' };
