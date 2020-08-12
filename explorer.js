@@ -165,7 +165,7 @@ function SharedService($rootScope) {
 
         // AWS.config.update(settings.cred);
         // AWS.config.update({ region: settings.region });
-        AWS.config.update(Object.assign(settings.cred, { ...settings }));
+        AWS.config.update(Object.assign(settings.cred, settings));
 
         if (this.skew) {
             this.correctClockSkew(settings.bucket);
